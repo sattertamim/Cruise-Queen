@@ -106,7 +106,7 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button onclick="handelBookNow()" class="btn-style">Book Now</button>
         </div>
     </main>
 
@@ -122,15 +122,7 @@
                 ticketNewCount = ticketCount - 1;
             }
             ticketInput.value = ticketNewCount;
-            // let ticketTotal = 0;
-            // if(ticket == 'firstClass'){
-            //     ticketTotal = ticketNewCount * 150;
-            // }
-            // if(ticket == 'economy'){
-            //     ticketTotal = ticketNewCount * 100;
-            // }
-            // document.getElementById(ticket + '-total').innerText = '$' + ticketTotal;
-
+    
             calculateTotal();
         }
         function calculateTotal(){
@@ -145,12 +137,21 @@
 
             const grandTotal = totalPrice + tax;
             document.getElementById('grand-total').innerText = '$' + grandTotal;
+            // handelBookNow();
 
         }
         function getInputValue(ticket){
             const ticketInput = document.getElementById(ticket + '-count');
             const ticketCount = parseInt(ticketInput.value);
             return ticketCount;
+        }
+        function handelBookNow(){
+            
+            const bookNow = document.getElementById('grand-total').innerText;
+            const bookNowCount = bookNow;
+            alert('Your Total Cost is:$' + bookNowCount);
+            alert('Do You Want To Confirm Your Booking !!!');
+        
         }
         
     </script>
